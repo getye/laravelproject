@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
      @include('header')
+     
   </head>
   <body>
   <div class="row h-100">
@@ -14,6 +15,7 @@
                         <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         Grade Report
                         </button>
+                        
                       </h5>
                     </div>
 
@@ -30,11 +32,29 @@
                 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
                   <!-- navbar links -->
                     <div class="navbar-nav">
-                                    <a class="nav-item nav-link" href="#">View Schedule</a>
-                                    <a class="nav-item nav-link" href="#">Post Notice</a>
-                                    <a class="nav-item nav-link" href="#">view Notice</a>
-                      <a class="nav-item nav-link" href="#">Upload Material</a>
-                                    <a class="nav-item nav-link" href="#">View Schedule</a>
+                 <a class="nav-item nav-link" href="#">View Schedule</a>
+                                          <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                          Notice
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                          <li><a class="dropdown-item" notice="#">Post</a></li>
+                                          <li><a class="dropdown-item" href="#">View</a></li>
+                                          <li><a class="dropdown-item" href="#"> Delete</a></li>
+                                        </ul>
+                                      </li>
+                                      <li class="nav-item dropdown">
+                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                          Material
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                          <li><a class="dropdown-item" notice="#">Upload</a></li>
+                                          <li><a class="dropdown-item" href="#">View</a></li>
+                                          <li><a class="dropdown-item" href="#"> Delete</a></li>
+                                        </ul>
+                                      </li>
+                  <a class="nav-item nav-link" href="#">View Profile</a>
+       
                     </div>
                 </nav> 
                 

@@ -17,10 +17,11 @@
                 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
 					            <!-- navbar links -->
                     <div class="navbar-nav">
-                                    <a class="nav-item nav-link" href="register_staff">Register Staff</a>
+                      <a class="nav-item nav-link" href="register_staff">Register Staff</a>
                       <a class="nav-item nav-link" href="#">Course offering </a>
                       <a class="nav-item nav-link" href="">Add curriculum </a>  
-                      <a class="nav-item nav-link" href="#">view staff profile</a>
+                      <a class="nav-item nav-link" href="{{route('view_staff')}}">view staff profile</a>
+                      <a class="nav-item nav-link" href="stud_view">View Requests</a>
 
                       <div class="dropdown">
                         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

@@ -25,6 +25,8 @@ Route::get('/', function () {
 });
 
 Route::view('/home', 'home')->name("home");
+Route::view('/contactus', 'contactus')->name("contactus");
+Route::view('/aboutus', 'aboutus')->name("aboutus");
 Route::get('/redirects', [HomeController::class,"index"]);
 
 Route::get('/dashboard', function () {
@@ -39,13 +41,23 @@ Route::middleware('auth')->group(function () {
 Route::view('/register', 'register');
 Route::get('/freshman', [StudInsertController::class, 'freshman']);
 Route::post('/freshman', [StudInsertController::class, 'fpost'])->name('freshman.post');
-Route::view('/registration', 'registration');
-Route::view('/requests.registration', 'requests.registration');
+Route::get('view_fresh_approval', [StudInsertController::class, 'view_fresh_approval'])->name('view_fresh_approval');
+Route::get('view_fresh_request', [StudInsertController::class, 'show'])->name('view_fresh_request');
+Route::get('/Accept_fresh_requet/{id}', [StudInsertController::class,"accept_fresh"])->name('Accept_fresh_requet');
+Route::get('/Reject_fresh_requet/{id}', [StudInsertController::class,"reject_fresh"])->name('Reject_fresh_requet');
+Route::get('/Download/{file}', [StudInsertController::class,"download"]);
+Route::get('/View/{id}', [StudInsertController::class,"view"]);
+Route::post('/view_approval', [StudInsertController::class, 'search'])->name('view_approval');
 Route::view('/mission', 'mission')->name('mission');
 Route::get('register_student', [StudInsertController::class, 'studinsertform'])->name('studinsertform');
 Route::post('register_student', [StudInsertController::class, 'studinsert'])->name('studinsert');
 Route::get('register_staff', [StaffInsertController::class, 'staffinsertform'])->name('staffinsertform');
 Route::post('register_staff', [StaffInsertController::class, 'staffinsert'])->name('staffinsert');
+Route::get('view_staff_profile', [StaffInsertController::class, 'show'])->name('view_staff');
+Route::get('/Download/{file}', [StaffInsertController::class,"download"]);
+Route::get('/View/{id}', [StaffInsertController::class,"view"]);
+Route::get('notice', [StaffInsertController::class, 'notice'])->name("notice");
+Route::post('notice', [StaffInsertController::class, 'tnotice'])->name("tnotice");
 
 //Route::get('view-records','StudViewController@index');
 Route::get('stud_view', [StudViewController::class, 'index']);
@@ -57,6 +69,7 @@ Route::get('registration', [AuthManager::class, 'registration'])->name("registra
 Route::post('registration', [AuthManager::class, 'registrationPost'])->name("registration.post");
 
 Route::get('logout', [AuthManager::class, 'logout'])->name("logout");
+//teacher page 
 
 
 require __DIR__.'/auth.php';

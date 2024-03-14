@@ -18,6 +18,7 @@
                     <div class="navbar-nav">
                           <a class="nav-item nav-link" href="register_student">Register Student</a>
                           <a class="nav-item nav-link" href="#">Register Course</a>
+                          <a class="nav-item nav-link" href="{{route('view_fresh_request')}}">Freshman Request </a>
                     </div>
                 </nav> 
                 
